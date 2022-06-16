@@ -32,7 +32,7 @@ const ToDoForm: FC = () => {
 
   const deleteTask = (taskToDelete: string): void => {
     setList(list.filter((item) => { 
-      return item.task != taskToDelete;
+      return item.task !== taskToDelete;
     }))}     
   
   return (

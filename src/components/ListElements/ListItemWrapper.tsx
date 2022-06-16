@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { LiWrapperProps, ToDo } from "../types";
 import ListItems from "./ListItems";
 
