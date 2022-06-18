@@ -37,7 +37,7 @@ const ToDoForm: FC = () => {
   
   return (
     <Fragment>
-      <div>
+      <div className="mb-8">
         <div className="space-y-4">
           <TextInput value={task} onChange={handleChange}/>
           <div title='listbox-wrapper' className="flex justify-center">
@@ -47,9 +47,9 @@ const ToDoForm: FC = () => {
           <ButtonInput isEnabled={isEnabled} onSubmit={handleSubmit}/>
           {!isEnabled && <p className="text-red-500 font-bold text-sm text-center">*Fill in fields prior to submitting*</p> }
         </div>
-      </div>
 
       {buttonClicked ? <ListItemWrapper list={list} deleteTask={deleteTask}/> : ""}
+      </div>
     </Fragment>
   );
 };

@@ -9,14 +9,14 @@ export const periodDeadline = [
   { name: 'month(s)' }
 ]
 
-const ListBox: React.FC<ListBoxProps> = ({value, onChange}) => {
+const ListBox: React.FC<ListBoxProps> = ({value, onChange, editState}) => {
   return (
-    <div className="w-2/5">
+    <div className={editState? "w-full" : "w-1/2"}>
       <Listbox 
       value={value} 
       onChange={onChange}>
         <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-4 pl-3 text-left justify-right shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+          <Listbox.Button className="relative w-full h-12 cursor-default rounded-lg bg-white py-2 pl-3 text-left justify-right shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{value.name}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <SelectorIcon
@@ -37,7 +37,7 @@ const ListBox: React.FC<ListBoxProps> = ({value, onChange}) => {
                   key={personIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-teal-600 text-white' : 'text-gray-900'
+                      active ? 'bg-teal-600 text-white' : editState ? 'text-left' : 'text-gray-900'
                     }`
                   }
                   value={period}

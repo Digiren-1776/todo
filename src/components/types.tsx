@@ -21,6 +21,7 @@ export type InputProps = {
 
 export type ListBoxProps = {
   value: { name: string },
+  editState?: boolean,
   onChange: React.Dispatch<React.SetStateAction<{name:
 string}>>
   };
